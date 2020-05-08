@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="js/jquery.min.js"></script>
+  
+    <link href="css/aboutus.css" rel="stylesheet"></link>
+   
+</head>
+<script>
+  $(function() {
+  $('a[href*=#section04]').on('click', function(e) {
+    e.preventDefault();
+    $("#polina").css("display","none");
+    $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
+    $("#section04").css("absolute","");
+    $("#section04").css("top","");
+    
+  });
+  $('a[href*=#section05]').on('click', function(e) {
+    e.preventDefault();
+   
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+    
+    setTimeout(function() {
+      $("#polina").css("display","block");
+          }, 500);
+  });
+});
+</script>
+
+<body>
+ 
+      <section id="section03" class="demo">
+      
+        <a href="#section04"><span></span></a>
+        <h4 id="companytitle" class="heading" >CheckMate <br>Innovations</h4>
+  
+     
+   
+        <div id="polina" >
+          <h1>A b o u t U s</h1>
+          <h2>Innovative Dreamers</h2>
+         
+          <p>What will happen if all technology professionals decide to  resign their job over night? and starts their own company,Can you imagine ,how many clients they will have , who will do what , will it be a recession to the outsourcing companies , will it be a pandemic to IT .Who are all will survive . It will be just a checkmate to all who gets thrilled while reading this ,will you work for a solution ,work-around ,create M.O.M s .?</p>
+          <p>You have to innovate something when you face a problem that you have never ever faced before Thats what we are focusing on ,thriving for Checkmate Innovations</p>
+         
+          </div>
+     
+    </section>
+      <section id="section04" class="demo">
+       
+        <h4 id="companytitle" class="heading" >CheckMate <br>Innovations</h4>
+  
+        <div id="founders"></div>
+            
+       
+        <video  id="founderslides" playsinline muted autoplay  loop>
+          <!-- 
+        - Video needs to be muted, since Chrome 66+ will not autoplay video with sound.
+        WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+      
+        <source src="media/teamslides.mp4" type="video/mp4">
+        
+        </video>
+      
+        <a href="#section05"><span></span></a>
+      </section>
+      
+
+   
+    
+</body>
+</html>

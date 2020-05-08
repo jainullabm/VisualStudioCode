@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Vertical Showcase Slider with jQuery and CSS Transitions</title>
+        <meta name="description" content="Vertical Showcase Slider with jQuery and CSS Transitions" />
+        <meta name="keywords" content="css3, transitions, vertical, layout, fullscreen, jquery, slide up, slide down" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/stylecs.css" />
+		<link href='http://fonts.googleapis.com/css?family=Dosis:200,400,700' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
+		<noscript><link rel="stylesheet" type="text/css" href="css/noscript.css" /></noscript>
+		<script src="js/jquery.min.js"></script>
+		<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="css/noscript.css" /><![endif]-->
+	</head>
+	<script>
+	$(document).ready(function() {
+		setInterval(function(){ 
+			
+			document.getElementById('clicknext').click();
+		}, 5000);
+	   
+	
+		
+	});
+	
+
+</script>
+    <body>
+		
+		<h4  class="heading" >CheckMate <br>Innovations</h4>
+  
+		<section id="ps-container" class="ps-container">
+			
+			
+			
+			
+			<div class="ps-contentwrapper">
+			
+				<div class="ps-content">
+					<h2>Diagnosing Crop Disease with Machine Learning</h2>
+					<span class="ps-price"></span>
+					
+					<p>Farmers spend billions of dollars a year on crop-disease management, but until recently, they've generally done so without access to adequate diagnostic tools. Targeted treatments are available to eradicate many strains of crop disease, but it's critical that the correct treatment be applied</p>
+					<a href="#">More Details</a>
+				</div>
+				
+				<div class="ps-content">
+					<h2>Quantum Computing Case Study</h2>
+					<span class="ps-price"></span>
+					<p>One year ago Volkswagen and D-Wave announced a collaboration to find an everyday problem quantum computing could solve, settling on traffic optimization, according to Ewald.The car manufacturer had location data from about 10,000 taxis in Beijing and focused the project further on traffic between downtown and the airport. After working together for three months to figure out how to map the data to quantum machinery, the team was able to generate solutions in seconds.When attempted on a regular Volkswagen server, it took more than half an hour to get a good solution, according to Ewald.</p>
+					<a href="#">More Details</a>
+				</div>
+				
+				<div class="ps-content">
+					<h2>Artificial Intelligence Case Study</h2>
+					<span class="ps-price"></span>
+					<p>All of us at rasa.io are particularly excited to share the results associated with the adoption of the rasa.io AI-powered newsletter platform by the American Marketing Association, which provides a community for marketers across the globe.AMA sought a way to engage their 100,000+ email subscribers on a regular basis. They began using rasa.io in order to deliver a daily marketing email quickly and easily. The adoption of rasa.io has helped the AMA engage their subscribers on a regular basis by keeping them up to date with the latest marketing news and involved with the organization.	</p>
+					<a href="#">More Details</a>
+				</div>
+				
+				<div class="ps-content">
+					<h2>Augmented Reality</h2>
+					<span class="ps-price"></span>
+					<p>Augmented Reality, known as AR, is a concept where we use technology to superimpose virtual information on to the world that we see. Gaming is one popular application of this technology. Did you know that product packaging is another?In fact, augmented reality has incredibly useful applications in the packaging industry. This fascinating technology can be used to enhance product packaging, improve brand loyalty, attract new customers, and stand out from competitors. The best part? Often, all you need is a QR code or a bit of minor tweaking to your package design</p>
+					<a href="#">More Details</a>
+				</div>
+				
+			
+				
+			</div><!-- /ps-contentwrapper -->
+			
+			<div class="ps-slidewrapper">
+			
+				<div class="ps-slides">
+					<div style="background-image:url(images/Solutions1.jpeg);"></div>
+					<div style="background-image:url(images/Solutions2.jpeg);"></div>
+					<div style="background-image:url(images/Solutions3.jpeg);"></div>
+					<div style="background-image:url(images/Solutions4.jpeg);"></div>
+				
+				</div>
+				
+				<nav>
+					<a href="#" class="ps-prev" ></a>
+					<a href="#" id="clicknext" class="ps-next" ></a>
+				</nav>
+				
+			</div><!-- /ps-slidewrapper -->
+			
+		</section><!-- /ps-container -->
+			
+		<!-- jQuery if needed -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/slider.js"></script>
+		<script type="text/javascript">
+			$(function() {
+
+				Slider.init();
+			
+			});
+		</script>
+    </body>
+</html>

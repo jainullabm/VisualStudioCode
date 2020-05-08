@@ -1,0 +1,981 @@
+
+@font-face {
+  font-family: 'Helios Regular'; /* Change to your font's name. */
+  src: url('../fonts/HELIOSFONT_PROTOTYPE.ttf'); /* Change to match your font file's location. */
+}
+
+@font-face {
+  font-family: 'Helios Rounded'; /* Change to your font's name. */
+  src: url('fonts/Helios Rounded.woff'); /* Change to match your font file's location. */
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  
+}
+
+@media (max-width: 767px) {
+  html, body {
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 640px) {
+  html, body {
+    font-size: 60%;
+  }
+}
+
+@media (max-width: 480px) {
+  html, body {
+    font-size: 40%;
+  }
+}
+
+.inner, .nav-panel ul .nav-btn:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.scene {
+  width: 100%;
+  height: 100%;
+ 
+}
+
+.page {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: opacity .7s, z-index .7s, -webkit-transform .7s;
+  transition: opacity .7s, z-index .7s, -webkit-transform .7s;
+  transition: transform .7s, opacity .7s, z-index .7s;
+  transition: transform .7s, opacity .7s, z-index .7s, -webkit-transform .7s;
+  will-change: transform, opacity;
+}
+
+.page:nth-child(1) .left {
+  background-image: url("../images/page1left_new.jpg");
+}
+
+.page:nth-child(1) .right {
+  background-image: url("../images/page1right_new.jpg");
+}
+
+.page:nth-child(2) .left {
+  background-image: url("../images/page2left1.jpg");
+}
+
+.page:nth-child(2) .right {
+  background-image: url("../images/page2right1.jpg");
+}
+
+.page:nth-child(3) .left {
+  background-image: url("../images/page3left.jpg");
+   
+}
+
+.page:nth-child(3) .right {
+  background-image: url("../images/page3right.jpg");
+  
+}
+
+#bgvid { 
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  min-width: 100%;
+  min-height: 100%;
+ width: 50%;
+transition: 1s opacity;
+opacity: .5;
+
+}
+.stopfade { 
+ opacity: .5;
+}
+
+.page:nth-child(4) .left {
+  background-image: url("../images/page4left.jpg");
+}
+
+.page:nth-child(4) .right {
+  background-image: url("../images/page4right.jpg");
+}
+.page:nth-child(5) .left {
+  background:white;
+  
+  
+}
+
+.page:nth-child(5) .right {
+  background-image: url("../images/How_we_are_diff.png");
+ 
+}
+
+.page.active {
+  z-index: 5;
+  -webkit-transition: opacity .7s, z-index 0s .7s, -webkit-transform .7s;
+  transition: opacity .7s, z-index 0s .7s, -webkit-transform .7s;
+  transition: transform .7s, opacity .7s, z-index 0s .7s;
+  transition: transform .7s, opacity .7s, z-index 0s .7s, -webkit-transform .7s;
+}
+
+.changeTitleColor{
+  color:black;
+}
+
+.page.active .half {
+  -webkit-transform: translateX(0) !important;
+          transform: translateX(0) !important;
+  -webkit-transition: -webkit-transform .7s ease-out;
+  transition: -webkit-transform .7s ease-out;
+  transition: transform .7s ease-out;
+  transition: transform .7s ease-out, -webkit-transform .7s ease-out;
+}
+
+.page.previous {
+  opacity: 0.4 !important;
+  visibility: visible !important;
+  -webkit-transition: opacity .7s, z-index 0s, -webkit-transform .7s;
+  transition: opacity .7s, z-index 0s, -webkit-transform .7s;
+  transition: transform .7s, opacity .7s, z-index 0s;
+  transition: transform .7s, opacity .7s, z-index 0s, -webkit-transform .7s;
+}
+
+.page.small {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  opacity: 0;
+}
+
+.page.small .half {
+  -webkit-transform: translateX(0) !important;
+          transform: translateX(0) !important;
+}
+
+.page:nth-child(2) .left {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.page:nth-child(2) .right {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.page:nth-child(3) .left {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.page:nth-child(3) .right {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.page:nth-child(4) .left {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.page:nth-child(4) .right {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.page:nth-child(5) .left {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.page:nth-child(5) .right {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.page:nth-child(6) .left {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.page:nth-child(6) .right {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.page:nth-child(7) .left {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.page:nth-child(7) .right {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.page:nth-child(8) .left {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.page:nth-child(8) .right {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.page:nth-child(9) .left {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.page:nth-child(9) .right {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.page:nth-child(10) .left {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.page:nth-child(10) .right {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.half {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-size: cover;
+  -webkit-transition: -webkit-transform .7s ease-in;
+  transition: -webkit-transform .7s ease-in;
+  transition: transform .7s ease-in;
+  transition: transform .7s ease-in, -webkit-transform .7s ease-in;
+  will-change: transform;
+}
+
+.half.left {
+  left: 0;
+}
+
+.half.right {
+  left: 50%;
+}
+
+.half.withText:after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  z-index: 10;
+}
+
+
+
+.heading {
+  position: absolute;
+  z-index: 500;
+  top: 10px;
+  left: 0px;
+
+  font-family:  'Helios Regular';
+  text-transform: uppercase;
+  font-size: 2.5em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgb(0, 0, 0), rgb(184, 206, 231), #fff);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  animation: animate 10s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);;
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
+
+
+
+.heading3 {
+  position: absolute;
+  z-index: 500;
+  top: 50%;
+  left: 0%;
+
+  font-family:  'Helios Regular';
+  text-transform: uppercase;
+  font-size: 2.5em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgb(0, 0, 0), rgb(184, 206, 231), #fff);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  animation: animate 10s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);;
+}
+
+
+
+.companylogo{
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  z-index: 500;
+  top: 0;
+  left: 0;
+
+}
+
+
+.companylogo2{
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  z-index: 500;
+  top: 45px;
+  left: 220px;
+
+
+}
+
+
+.nav-panel {
+  position: fixed;
+  top: 50%;
+  right: 2%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 1000;
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s cubic-bezier(0.57, 1.2, 0.68, 2.6);
+  transition: opacity 0.5s, -webkit-transform 0.5s cubic-bezier(0.57, 1.2, 0.68, 2.6);
+  transition: opacity 0.5s, transform 0.5s cubic-bezier(0.57, 1.2, 0.68, 2.6);
+  transition: opacity 0.5s, transform 0.5s cubic-bezier(0.57, 1.2, 0.68, 2.6), -webkit-transform 0.5s cubic-bezier(0.57, 1.2, 0.68, 2.6);
+  will-change: transform, opacity;
+}
+
+.nav-panel.invisible {
+  opacity: 0;
+  -webkit-transform: translateY(-50%) scale(0.5);
+          transform: translateY(-50%) scale(0.5);
+}
+
+.nav-panel ul {
+  list-style-type: none;
+}
+
+.otherpageposition{
+top: 0;
+width: 100%;
+height: 100%;
+}
+
+.nav-panel ul .nav-btn {
+  position: relative;
+  overflow: hidden;
+  width: 1rem;
+  height: 1rem;
+  margin-bottom: 0.5rem;
+  border: 0.12rem solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition: border-color, -webkit-transform 0.3s;
+  transition: border-color, -webkit-transform 0.3s;
+  transition: border-color, transform 0.3s;
+  transition: border-color, transform 0.3s, -webkit-transform 0.3s;
+  will-change: border-color, transform;
+}
+
+.nav-panel ul .nav-btn:after {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%) scale(0.3);
+          transform: translateX(-50%) translateY(-50%) scale(0.3);
+  background-color: #fff;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s, -webkit-transform;
+  transition: opacity 0.3s, -webkit-transform;
+  transition: transform, opacity 0.3s;
+  transition: transform, opacity 0.3s, -webkit-transform;
+  will-change: transform, opacity;
+}
+
+.nav-panel ul .nav-btn.active:after, .nav-panel ul .nav-btn:hover:after {
+  -webkit-transform: translateX(-50%) translateY(-50%) scale(0.7);
+          transform: translateX(-50%) translateY(-50%) scale(0.7);
+  opacity: 1;
+}
+
+.nav-panel ul .nav-btn:hover {
+  border-color: yellow;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.nav-panel ul .nav-btn:hover:after {
+  background-color: yellow;
+}
+
+.nav-panel .scroll-btn {
+  position: absolute;
+  left: 0;
+  width: 1rem;
+  height: 1rem;
+  border: 0.3rem solid #fff;
+  border-left: none;
+  border-bottom: none;
+  cursor: pointer;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transition: border-color 0.3s;
+  transition: border-color 0.3s;
+  
+}
+
+.nav-panel .scroll-btn.up {
+  top: -1.6rem;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.nav-panel .scroll-btn.down {
+  bottom: -1.2rem;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.nav-panel .scroll-btn:hover {
+  border-color: yellow;
+}
+
+.check-out {
+  z-index: 1000;
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-family: Decade;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.check-out a {
+  color: #ffaaaa;
+  text-decoration: none;
+  border-bottom: 0.2rem solid;
+}
+/*# sourceMappingURL=style.css.map */
+
+.menupage {
+  position: absolute;
+    top: 0;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1;
+    width: 80%;
+    padding: 20px;
+    text-align: center; 
+  }
+  
+  .menupage .submenus1 {
+     text-align: center;
+  }
+  
+  .submenus1 {
+    font-family: Copperplate,Copperplate Gothic Light,fantasy; font-size: 20px;font-weight: bold;
+   position: absolute;
+   left:600px;
+   top:240px;
+   cursor: pointer;
+  }
+  .submenus2 {
+    font-family: Copperplate,Copperplate Gothic Light,fantasy; font-size: 20px;font-weight: bold;
+   position: absolute;
+   left:600px;
+   top:280px;
+   text-align: center; 
+   cursor: pointer;
+  }
+  .submenus3 {
+    font-family: Copperplate,Copperplate Gothic Light,fantasy; font-size: 20px;font-weight: bold;
+   position: absolute;
+   left:600px;
+   top:320px;
+   cursor: pointer;
+  }
+  .submenus4 {
+    font-family: Copperplate,Copperplate Gothic Light,fantasy; font-size: 20px;font-weight: bold;
+   position: absolute;
+   left:600px;
+   top:360px;
+   text-align: center; 
+   cursor: pointer;
+  }
+  .submenus5 {
+    font-family: Copperplate,Copperplate Gothic Light,fantasy; font-size: 20px;font-weight: bold;
+   position: absolute;
+   left:600px;
+   top:400px;
+   cursor: pointer;
+  }
+  
+  .submenus10 {
+    font-family: Copperplate,Copperplate Gothic Light,fantasy; font-size: 20px;font-weight: bold;
+   position: absolute;
+   left:600px;
+   top:440px;
+   text-align: center; 
+   cursor: pointer;
+  }
+
+.menus{
+  
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    z-index: 1000;
+    -webkit-transition: opacity 0.5s, -webkit-transform 0.5s cubic-bezier(0.57, 1.2, 0.68, 2.6);
+    transition: opacity 0.5s, -webkit-transform 0.5s cubic-bezier(0.57, 1.2, 0.68, 2.6);
+    transition: opacity 0.5s, transform 0.5s cubic-bezier(0.57, 1.2, 0.68, 2.6);
+    transition: opacity 0.5s, transform 0.5s cubic-bezier(0.57, 1.2, 0.68, 2.6), -webkit-transform 0.5s cubic-bezier(0.57, 1.2, 0.68, 2.6);
+    will-change: transform, opacity;
+  
+  }
+  
+  .bar1, .bar2, .bar3 {
+    cursor: pointer;
+      width: 35px;
+    height: 5px;
+    background-color:white;
+    margin: 6px 0;
+    transition: 0.4s;
+    position: relative;
+    left:96%;
+   
+    
+   
+    
+  }
+  
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+  
+  @keyframes animate {
+    0% {
+      background-position: -500%;
+    }
+    100% {
+      background-position: 500%;
+    }
+  }
+  
+  .blockquote-wrapper {
+    position: absolute;
+  z-index: 500;
+  top: 50%;
+  left: 0%;
+
+ }
+ 
+ /* Blockquote main style */
+ .blockquote {
+     position: relative;
+       font-family:  Copperplate,Copperplate Gothic Light,fantasy;
+     max-width: 620px;
+     margin: 80px auto;
+    
+ }
+ 
+ /* Blockquote header */
+ .blockquote h2 {
+     font-family: 'Abril Fatface', cursive;
+     position: relative; /* for pseudos */
+     color: #B7E8EB;
+     
+     font-weight: normal;
+     line-height: 1;
+     margin: 0;
+     border: 2px solid #fff;
+     border: solid 2px;
+     
+     
+ }
+ 
+ /* Blockquote right double quotes */
+ .blockquote h2:after {
+     content:"";
+     position: absolute;
+     border: 2px solid #B7E8EB;
+     border-radius: 0 50px 0 0;
+     width: 60px;
+     height: 60px;
+     bottom: -60px;
+     left: 50px;
+     border-bottom: none;
+     border-left: none;
+     z-index: 3; 
+ }
+ 
+ .blockquote h2:before {
+     content:"";
+     position: absolute;
+     width: 80px;
+     border: 2px solid #292a2b;
+     bottom: -3px;
+     left: 50px;
+     z-index: 2;
+ }
+ 
+ /* increase header size after 600px */
+ @media all and (min-width: 600px) {
+     .blockquote h1 {
+         font-size: 3rem;
+         line-height: 1.2;
+    }
+ 
+ }
+ 
+ /* Blockquote subheader */
+ .blockquote h1 {
+     position: relative;
+     color: #ffffff;
+     
+     font-weight: 50px;
+     line-height: 1.2;
+     margin: 0;
+     padding-top: 15px;
+    
+     margin-left:150px;
+     padding-left:12px;
+ }
+ 
+  
+ .blockquote h1:first-letter {
+   margin-left:-12px;
+ }
+  
+
+ .blockquote-wrapper-page2 {
+  position: absolute;
+z-index: 500;
+top: 50%;
+left: 50%;
+
+}
+
+/* Blockquote main style */
+.blockquote-page2 {
+   position: relative;
+     font-family:  Copperplate,Copperplate Gothic Light,fantasy;
+   max-width: 620px;
+   margin: 80px auto;
+  
+}
+
+/* Blockquote header */
+.blockquote-page2 h2 {
+   font-family: 'Abril Fatface', cursive;
+   position: relative; /* for pseudos */
+   color: #B7E8EB;
+   
+   font-weight: normal;
+   line-height: 1;
+   margin: 0;
+   border: 2px solid #fff;
+   border: solid 2px;
+   
+   
+}
+
+/* Blockquote right double quotes */
+.blockquote-page2 h2:after {
+   content:"";
+   position: absolute;
+   border: 2px solid #B7E8EB;
+   border-radius: 0 50px 0 0;
+   width: 60px;
+   height: 60px;
+   bottom: -60px;
+   left: 50px;
+   border-bottom: none;
+   border-left: none;
+   z-index: 3; 
+}
+
+.blockquote-page2 h2:before {
+   content:"";
+   position: absolute;
+   width: 80px;
+   border: 2px solid #292a2b;
+   bottom: -3px;
+   left: 50px;
+   z-index: 2;
+}
+
+/* increase header size after 600px */
+@media all and (min-width: 600px) {
+   .blockquote-page2 h1 {
+       font-size: 3rem;
+       line-height: 1.2;
+  }
+
+}
+
+/* Blockquote subheader */
+.blockquote-page2 h1 {
+   position: relative;
+   color: #ffffff;
+   
+   font-weight: 50px;
+   line-height: 1.2;
+   margin: 0;
+   padding-top: 15px;
+  
+   margin-left:150px;
+   padding-left:12px;
+}
+
+
+.blockquote-page2 h1:first-letter {
+ margin-left:-12px;
+}
+
+.blockquote-wrapper-page3 {
+  position: absolute;
+z-index: 500;
+top: 30%;
+left: 0%;
+
+}
+
+/* Blockquote main style */
+.blockquote-page3 {
+   position: relative;
+     font-family:  Copperplate,Copperplate Gothic Light,fantasy;
+   max-width: 750px;
+   margin: 80px auto;
+  
+}
+
+/* Blockquote header */
+.blockquote-page3 h2 {
+   font-family: 'Abril Fatface', cursive;
+   position: relative; /* for pseudos */
+   color: #B7E8EB;
+   
+   font-weight: normal;
+   line-height: 1;
+   margin: 0;
+   border: 2px solid #fff;
+   border: solid 2px;
+   
+   
+}
+
+/* Blockquote right double quotes */
+.blockquote-page3 h2:after {
+   
+   position: absolute;
+   border: 2px solid #B7E8EB;
+   border-radius: 0 50px 0 0;
+   width: 60px;
+   height: 60px;
+   bottom: -60px;
+   left: 50px;
+   border-bottom: none;
+   border-left: none;
+   z-index: 3; 
+}
+
+.blockquote-page3 h2:before {
+   content:"";
+   position: absolute;
+   width: 80px;
+   border: 2px solid #292a2b;
+   bottom: -3px;
+   left: 50px;
+   z-index: 2;
+}
+
+/* increase header size after 600px */
+@media all and (min-width: 600px) {
+   .blockquote-page3 h1 {
+       font-size: 3rem;
+       line-height: 1.2;
+  }
+
+}
+
+/* Blockquote subheader */
+.blockquote-page3 h1 {
+   position: relative;
+   color: white;
+   
+   font-weight: 50px;
+   line-height: 1.2;
+   margin: 0;
+   padding-top: 15px;
+  
+   margin-left:0;
+   padding-left:12px;
+}
+
+
+.blockquote-page3 h1:first-letter {
+ margin-left:-12px;
+}
+
+.blockquote-wrapper-page4 {
+  position: absolute;
+z-index: 500;
+top: 5%;
+left: 39%;
+
+}
+
+/* Blockquote main style */
+.blockquote-page4 {
+   position: relative;
+     font-family:  Decade;
+   max-width: 900px;
+   margin: 80px auto;
+  
+}
+
+
+
+/* increase header size after 600px */
+@media all and (min-width: 600px) {
+   .blockquote-page4 h1 {
+       font-size: 3rem;
+       line-height: 1.2;
+  }
+
+}
+
+/* Blockquote subheader */
+.blockquote-page4 h1 {
+   position: relative;
+   color: rgb(185, 196, 23);
+   
+   font-weight: 50px;
+   line-height: 1.2;
+   margin: 0;
+   padding-top: 15px;
+  
+   margin-left:150px;
+   padding-left:12px;
+}
+
+
+.blockquote-page4 h1:first-letter {
+ margin-left:-12px;
+}
+
+
+.page5Text{
+  font-size: 1.4em;
+  width:35%;
+  margin:30px auto;
+  font-family:Open Sans;
+  font-style:italic;
+  font-size: 30px;
+  
+  color: black;
+  padding:1.2em 0px 1.2em 75px;
+  border-left:8px solid #78C0A8 ;
+ 
+    position: absolute;
+    top:100px;
+
+  
+}
+.page5Tex h3{
+  background: white;
+}
+.page5Text::before{
+  font-family:Arial;
+  content: "\201C";
+  color:#78C0A8;
+  font-size:4em;
+  position: absolute;
+  left: 10px;
+  top:-10px;
+}
+
+.page5Text::after{
+  content: '';
+}
+
+.page5Text span{
+  display:block;
+  color:#333333;
+  font-style: normal;
+  font-weight: bold;
+  margin-top:1em;
+}
+
+.page3content{
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  z-index: 500;
+  top: 5px;
+  left: 0;
+
+
+}
+
+.blockquote-page3 h3 {
+  position: relative;
+  color: white;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 30px;font-weight: bold;
+  margin: 0;
+  padding-top: 15px;
+ 
+  margin-left:80px;
+  padding-left:12px;
+}
